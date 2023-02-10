@@ -1,0 +1,29 @@
+{
+  "name": "third-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "engines" : { 
+    "npm" : ">=8.0.0 <9.0.0",
+    "node" : ">=16.0.0 <17.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "watch": "nodemon",
+    "seed": "node seeders/seeds.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^8.5.1",
+    "apollo-server-express": "^3.6.1",
+    "express": "^4.17.2",
+    "graphql": "^16.2.0",
+    "mongoose": "^6.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
