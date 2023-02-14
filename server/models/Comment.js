@@ -1,4 +1,4 @@
-const { Schema, model } = reqiuire('mongoose');
+const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const commentSchema = new Schema(
