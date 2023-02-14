@@ -10,7 +10,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 
-import { setContent } from '@apollo/client/link/context';
+import { setContent, setContext } from '@apollo/client/link/context';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -44,20 +44,9 @@ function App() {
   return (
     <ApolloProvider client ={client}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>BADIFY</h1>
+      
+      <Footer/>
     </div>
   </ApolloProvider>
   );
