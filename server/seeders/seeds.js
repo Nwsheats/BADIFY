@@ -9,8 +9,7 @@ db.once('open', async () => {
       await User.deleteMany({});
       
       await User.create(userSeeds);
-
-      // add logic for Songs, likely a for loop
+      await Song.create(songSeeds);
     }
     catch (err) {
         console.error(err);

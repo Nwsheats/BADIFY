@@ -4,7 +4,42 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-
+      users: async () => {
+        return User.find()
+        .select('-__v -password')
+        .populate('comments')
+        .populate('playlists');
+      },
+      user: async (parent, {username}) => {
+        return User.findOne({ username })
+        .select('-__v -password')
+        .populate('comments')
+        .populate('playlists');
+      },
+      comments: async (parent, {songId, username}) => {
+        const params = {} 
+          if (username) {
+            params['username'] = username;
+          }
+          if (songId) {
+            params['songId'] = songId;
+          }
+        return Comment.find(params).sort({ createdAt: -1 });
+      },
+      comment: async (parent, { _id }) => {
+        return Comment.findOne({ _id })
+      },
+      playlist: async (parent, { _id }) => {
+        return Playlist.findOne({ _id })
+      },
+      songs: async () => {
+        return Song.find()
+        .populate('comments');
+      },
+      song: async (parent, { _id }) => {
+        return Song.findOne({ _id })
+        .populate('comments');
+      },
     },
     Mutation: {
         login: async (parent, { email, password }) => {
@@ -29,6 +64,8 @@ const resolvers = {
       
             return { token, user };
           },
+        //addComment, updatePlaylist, addSongToPlaylist, removeSongFromPlaylist,  
+        //updatePlaylist: sending in the name and the full song playlist
     }
 
 };

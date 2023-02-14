@@ -30,7 +30,7 @@ const songSchema = new Schema(
             required: false
         },
         releaseYear: {
-            type: String,
+            type: Number,
             required: false
         },
         createdAt: {

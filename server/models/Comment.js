@@ -1,4 +1,4 @@
-const { Schema, model } = reqiuire('mongoose');
+const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const commentSchema = new Schema(
@@ -17,15 +17,11 @@ const commentSchema = new Schema(
             get: timestamp => dateFormat(timestamp)
         },
         songId: {
-            {
-        type: Schema.Types.ObjectId,
-        ref: 'Song'
-    }
+
+            type: Schema.Types.ObjectId,
+            ref: 'Song'
         }
-
-
-    }
-);
+    });
 
 const Comment = model('Comment', commentSchema);
 
