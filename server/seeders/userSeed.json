@@ -1,0 +1,9 @@
+[
+    {
+        "username": "testuser1",
+        "email": "test1@email.com",
+        "password": "password12345",
+        "playlist": [],
+        "comments": []
+    }
+]

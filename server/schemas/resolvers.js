@@ -4,7 +4,9 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-
+      users: async () => {
+        if 
+      }
     },
     Mutation: {
         login: async (parent, { email, password }) => {
