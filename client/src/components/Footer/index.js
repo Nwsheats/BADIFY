@@ -2,7 +2,11 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>This is where the footer will go</div>
+    <div class="ui vertical footer segment">
+    <div class="ui container">
+    <strong>Badify</strong> by Ben, Connor, Melisa, Moony, & Nathan
+    </div>
+</div>
   )
 }
 
