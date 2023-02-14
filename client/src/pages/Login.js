@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
+import 'semantic-ui-css/semantic.min.css';
+import 'semantic-ui-react'; 
 
 import Auth from "../utils/auth";
 
