@@ -45,7 +45,7 @@ function App() {
     <ApolloProvider client ={client}>
     <div className="App">
       <h1>BADIFY</h1>
-      
+
       <Footer/>
     </div>
   </ApolloProvider>
