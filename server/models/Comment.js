@@ -17,15 +17,11 @@ const commentSchema = new Schema(
             get: timestamp => dateFormat(timestamp)
         },
         songId: {
-            {
-        type: Schema.Types.ObjectId,
-        ref: 'Song'
-    }
+
+            type: Schema.Types.ObjectId,
+            ref: 'Song'
         }
-
-
-    }
-);
+    });
 
 const Comment = model('Comment', commentSchema);
 
