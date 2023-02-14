@@ -44,7 +44,7 @@ function App() {
   return (
     <ApolloProvider client ={client}>
     <div className="App">
-      <h1>BADIFY</h1>
+    <Header/>
       
       <Footer/>
     </div>
