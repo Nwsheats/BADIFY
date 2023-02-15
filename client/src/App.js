@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css';
 
 
@@ -21,6 +22,8 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
 //import Forum from './pages/Forum';
+
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
