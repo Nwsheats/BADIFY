@@ -13,15 +13,15 @@ const typeDefs = gql`
 
     type Song {
         _id: ID
-        songDay: Number
+        songDay: Int
         songTitle: String
         artistName: String
         recordLabel: String
-        releaseYear: Number
+        releaseYear: Int
         createdAt: String
         submittedBy: String
         comments: [Comment]
-        commentCount: Number
+        commentCount: Int
     }
 
     type Comment {
@@ -40,10 +40,17 @@ const typeDefs = gql`
 
     type Auth {
         token: ID!
-        user: user
+        user: User
     }
 
     type Query {
+        users: [User]
+        user(username: String): User
+        comments(songId: String, username: String): [Comment]
+        comment(_id: String): Comment
+        playlist(_id: String): Playlist
+        songs: [Song]
+        song(_id: String): Song
     }
 
     type Mutation {

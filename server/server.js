@@ -48,8 +48,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
     })
   })
 };
-  
-const app = express()
+
 app.use(cors())
 app.use(bodyParser.json())
 // this is used for the lyricsFinder api
