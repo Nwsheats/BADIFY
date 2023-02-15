@@ -4,7 +4,7 @@ import React from 'react'
 
 
 import { useState, useEffect } from "react"
-import useAuth from "./util/useAuth"
+import useAuth from "../utils/spotifyAuth"
 import Player from "../components/Player/Player"
 import TrackSearchResult from "../components/SearchResults/SearchResult"
 import { Container, Form } from "react-bootstrap"
