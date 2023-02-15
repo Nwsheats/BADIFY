@@ -1,9 +1,12 @@
 import React from 'react'
+
+
+
+
 import { useState, useEffect } from "react"
 import useAuth from "./util/useAuth"
-import Player from "./Player"
-import TrackSearchResult from "./TrackSearchResult"
-import RecommendationResults from "./RecommendationResults"
+import Player from "../components/Player/Player"
+import TrackSearchResult from "../components/SearchResults/SearchResult"
 import { Container, Form } from "react-bootstrap"
 // spotify-web-api-node also works in the browser even though it is called node
 import SpotifyWebApi from "spotify-web-api-node"
@@ -85,18 +88,6 @@ export default function Home({ code }) {
     return () => (cancel = true)
   }, [search, accessToken])
 
-  spotifyApi.getRecommendations({
-    min_energy: 0.4,
-    seed_artists: ['6mfK6Q2tzLMEchAr0e9Uzu', '4DYFVNKZ1uixa6SQTvzQwJ'],
-    max_popularity: 10
-  })
-  .then(function(data) {
-  let recommendations = data.body;
-  console.log(recommendations);
-  }, function(err) {
-  console.log("Something went wrong!", err);
-  });
-
   // style={{ overflowY: "auto" }} will allow us to scroll down through the returned list
   return (
     
@@ -107,7 +98,6 @@ export default function Home({ code }) {
         value={search}
         onChange={e => setSearch(e.target.value)}
       />
-      
       <div className="flex-grow-1 my-2" style={{ overflowY: "auto" }}>
         {searchResults.map(track => (
           <TrackSearchResult
@@ -122,15 +112,6 @@ export default function Home({ code }) {
             {lyrics}
           </div>
         )}
-      </div>
-      <div className="flex-grow-1 my-2" style={{ overflowY: "auto" }}>
-        {recommendation.map(track => (
-          <RecommendationResults
-            track={track}
-            key={track.uri}
-            chooseTrack={chooseTrack}
-          />
-        ))}
       </div>
       <div>
         <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
