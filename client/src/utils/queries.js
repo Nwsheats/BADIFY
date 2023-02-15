@@ -47,10 +47,10 @@ export const QUERY_COMMENT =gql`
         }
     }
 `;
-// need help with this one linking it back to server/typeDefs
+
 export const QUERY_COMMENTS =gql`
-    query comments($songId: String!){
-        song(songId: $songId){
+    query comments($songId: String!, $username: String!){
+        song(songId: $songId, username: $username){
         ID
         userName
         commentText
