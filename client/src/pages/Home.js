@@ -1,11 +1,4 @@
 import React from 'react'
-
-const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
-
 import { useState, useEffect } from "react"
 import useAuth from "./util/useAuth"
 import Player from "./Player"
