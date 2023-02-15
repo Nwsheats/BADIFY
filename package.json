@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "node server/server.js",
+    "devStart": "concurrently \"cd server && npm run nodemon server.js\" \"cd client && npm start\"",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
@@ -22,7 +23,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^5.1.0"
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.7",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "lyrics-finder": "^21.7.0",
+    "spotify-web-api-node": "^5.0.2",
+    "body-parser": "^1.19.0"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
