@@ -19,6 +19,7 @@ const typeDefs = gql`
         recordLabel: String
         releaseYear: Number
         createdAt: String
+        submittedBy: String
         comments: [Comment]
         commentCount: Number
     }
@@ -34,8 +35,7 @@ const typeDefs = gql`
         username: String
         listName: String
         createdAt: String
-        songs: [Song]
-        
+        songs: [Song] 
     }
 
     type Auth {

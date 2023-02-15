@@ -38,6 +38,10 @@ const songSchema = new Schema(
             default: Date.now,
             get: timestamp => dateFormat(timestamp)
         },
+        submittedBy: {
+            type: String,
+            required: false
+        },
         comments: [
             {
                 type: Schema.Types.ObjectId,
