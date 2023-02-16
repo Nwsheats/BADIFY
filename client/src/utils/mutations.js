@@ -23,3 +23,18 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_COMMENT = gql`
+  mutation addComment($songTitle: String!, $commentText: String!) {
+    addComment(songTitle: $songTitle, commentText: $commentText) {
+      _id
+      userName
+      commentText
+      createdAt
+      songId{
+        _id
+      }
+    }
+  }
+`;
+// updatePlaylist, addSongToPlaylist, removeSongFromPlaylist,  
