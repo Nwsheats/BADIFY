@@ -3,6 +3,7 @@ import React from 'react'
 import { useState, useEffect } from "react"
 import useAuth from "../utils/spotifyAuth"
 import Player from "../components/Player/Player"
+import DailySong from "../components/DailySong";
 import TrackSearchResult from "../components/SearchResults/SearchResult"
 import { Container, Form } from "react-bootstrap"
 // spotify-web-api-node also works in the browser even though it is called node
@@ -111,7 +112,10 @@ export default function Home({ code }) {
         )}
       </div>
       <div>
-        <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
+        <DailySong />
+        <Player 
+        accessToken={accessToken} 
+        trackUri={playingTrack?.uri} />
       </div>
     </Container>
   );

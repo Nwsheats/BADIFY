@@ -16,10 +16,11 @@ import { setContent, setContext } from "@apollo/client/link/context";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Profile from "./pages/Profile";
+import Home from './pages/Home'; 
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Profile from './pages/Profile';
+import DailySong from './components/DailySong';
 //import Forum from './pages/Forum';
 
 const httpLink = createHttpLink({
@@ -44,19 +45,22 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <Router>
-      <div>
+    <ApolloProvider client={client}>
+      <Router>
+        <div>
         <Header></Header>
         <Routes>
         <Route path='/Home' element={<Home/>} />
           {/*<Route path='/Forum' element={<Forum/>} />*/}
           <Route path='/Login' element={<Login/>} />
           <Route path='/Signup' element={<Signup/>} />
+          <Route path='/' element={<Home/>} />
           <Route path='/Profile' element={<Profile/>} />
         </Routes>
-      </div>
-      <Footer></Footer>
-    </Router>
+        </div>
+        <Footer></Footer>
+      </Router>
+      </ApolloProvider>
   );
 }
 

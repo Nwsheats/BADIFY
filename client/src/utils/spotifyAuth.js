@@ -25,8 +25,8 @@ export default function useAuth(code) {
                 // this pulls the code number off of out url and sets it blank
                 window.history.pushState({}, null, "/")
             })
-            .catch(() => {
-                window.location = "/"
+            .catch((err) => {
+                console.error(err);
             })
     }, [code])
 
@@ -44,8 +44,8 @@ export default function useAuth(code) {
                     setAccessToken(res.data.accessToken)
                     setExpiresIn(res.data.expiresIn)
                 })
-                .catch(() => {
-                    window.location = "/"
+                .catch((err) => {
+                    console.error(err);
                 })
         }, (expiresIn - 60) * 1000)
 
