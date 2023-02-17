@@ -7,6 +7,7 @@ const typeDefs = gql`
         firstname: String
         lastname: String
         email: String
+        password: String
         createdAt: String
         comments: [Comment]
     }
@@ -33,6 +34,7 @@ const typeDefs = gql`
     }
 
     type Playlist {
+        _id: ID
         username: String
         listName: String
         createdAt: String
@@ -57,6 +59,9 @@ const typeDefs = gql`
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
+        addComment(commentText: String!, songId: String!, userName: String!): Comment
+#  still nee to add updatePlaylist, addSongToPlaylist, removeSongFromPlaylist
+
     }
 `;
 
