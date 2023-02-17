@@ -1,8 +1,5 @@
 import React from 'react'
 
-
-
-
 import { useState, useEffect } from "react"
 import useAuth from "../utils/spotifyAuth"
 import Player from "../components/Player/Player"
