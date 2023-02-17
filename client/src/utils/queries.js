@@ -19,7 +19,7 @@ export const QUERY_USER = gql`
     }
 `;
 
-export const QUERY_SONG =gql`
+export const QUERY_SONG = gql`
     query song($id: String!){
         song(_id: $id){
         ID
@@ -67,7 +67,7 @@ export const QUERY_COMMENT =gql`
     }
 `;
 
-export const QUERY_COMMENTS =gql`
+export const QUERY_COMMENTS = gql`
     query comments($songId: String!, $username: String!){
         song(songId: $songId, username: $username){
         ID
@@ -79,7 +79,7 @@ export const QUERY_COMMENTS =gql`
     }
 `;
 
-export const QUERY_PLAYLIST =gql`
+export const QUERY_PLAYLIST = gql`
     query playlist($id: String!){
         song(_id: $id){
         username
@@ -88,4 +88,31 @@ export const QUERY_PLAYLIST =gql`
         songs
         }
     }
+`;
+
+export const QUERY_ME = gql`
+{
+    me {
+    _id
+    username
+    email
+    friendCount
+    thoughts {
+        _id
+        thoughtText
+        createdAt
+        reactionCount
+        reactions {
+        _id
+        createdAt
+        reactionBody
+        username
+        }
+    }
+    friends {
+        _id
+        username
+    }
+    }
+}
 `;
