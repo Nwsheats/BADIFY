@@ -25,6 +25,7 @@ const typeDefs = gql`
     }
 
     type Comment {
+        _id: ID
         userName: String
         commentText: String
         createdAt: String
@@ -56,7 +57,6 @@ const typeDefs = gql`
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
-       
     }
 `;
 

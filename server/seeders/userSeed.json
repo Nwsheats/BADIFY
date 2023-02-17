@@ -5,5 +5,40 @@
         "password": "password12345",
         "playlist": [],
         "comments": []
+    },
+    {
+        "username": "conor",
+        "email": "riversidempls@gmail.com",
+        "password": "password12345",
+        "playlist": [],
+        "comments": []
+    },
+    {
+        "username": "moony",
+        "email": "test2@email.com",
+        "password": "password12345",
+        "playlist": [],
+        "comments": []
+    },
+    {
+        "username": "nathan",
+        "email": "test3@email.com",
+        "password": "password12345",
+        "playlist": [],
+        "comments": []
+    },
+    {
+        "username": "melisa",
+        "email": "test4@email.com",
+        "password": "password12345",
+        "playlist": [],
+        "comments": []
+    },
+    {
+        "username": "ben",
+        "email": "test5@email.com",
+        "password": "password12345",
+        "playlist": [],
+        "comments": []
     }
 ]
