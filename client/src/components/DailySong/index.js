@@ -4,7 +4,7 @@ import { useMutation, useQuery } from '@apollo/client';
 import { QUERY_SONGS, QUERY_PLAYLIST } from '../../utils/queries';
 
 const DailySong = () => {
-    const { loading, songData } = useQuery(QUERY_SONGS);
+    const { loading, data: songData } = useQuery(QUERY_SONGS);
     console.log(songData);
 
     // const [songTitle, setTitle] = useState('');
