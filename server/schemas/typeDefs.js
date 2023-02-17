@@ -26,7 +26,7 @@ const typeDefs = gql`
 
     type Comment {
         _id: ID
-        userName: String
+        username: String
         commentText: String
         createdAt: String
         songId: [Song]
@@ -44,6 +44,7 @@ const typeDefs = gql`
         user: User
     }
 
+
     type Query {
         users: [User]
         user(username: String): User
@@ -59,5 +60,8 @@ const typeDefs = gql`
         addUser(username: String!, email: String!, password: String!): Auth
     }
 `;
+
+// query for Spotify Login = get token
+// query for Spotify refresh = get token
 
 module.exports = typeDefs;
