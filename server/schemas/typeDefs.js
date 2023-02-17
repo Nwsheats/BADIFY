@@ -33,7 +33,7 @@ const typeDefs = gql`
     }
 
     type Playlist {
-        username: String
+        user_id: ID!
         listName: String
         createdAt: String
         songs: [Song] 

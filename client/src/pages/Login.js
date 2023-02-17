@@ -7,7 +7,7 @@ import 'semantic-ui-react';
 import Auth from "../utils/auth";
 
 const Login = (props) => {
-  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [formState, setFormState] = useState({ username: "", password: "" });
   const [login, { error }] = useMutation(LOGIN_USER);
 
   // update state based on form input changes
@@ -36,15 +36,46 @@ const Login = (props) => {
 
     // clear form values
     setFormState({
-      email: "",
+      username: "",
       password: "",
     });
   };
 
   return (
-    <div></div>
+    <main className="flex-row justify-center mb-4">
+      <div className="col-12 col-md-6">
+        <div className="card">
+          <h4 className="card-header">Login</h4>
+          <div className="card-body">
+            <form onSubmit={handleFormSubmit}>
+              <input
+                className="form-input"
+                placeholder="username"
+                name="username"
+                type="username"
+                id="username"
+                value={formState.username}
+                onChange={handleChange}
+              />
+              <input
+                className="form-input"
+                placeholder="******"
+                name="password"
+                type="password"
+                id="password"
+                value={formState.password}
+                onChange={handleChange}
+              />
+              <button className="btn d-block w-100" type="submit">
+                Submit
+              </button>
+            </form>
 
-    // add JSX returned and use handleFormSubmit from line 22 and handleChange from line 12
+            {error && <div>Login failed</div>}
+          </div>
+        </div>
+      </div>
+    </main>
   );
 };
 
