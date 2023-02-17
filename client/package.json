@@ -20,7 +20,8 @@
     "react-spotify-web-playback": "^0.8.1",
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.4",
-    "spotify-web-api-node": "^5.0.2"
+    "spotify-web-api-node": "^5.0.2",
+    "mdb-react-ui-kit": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

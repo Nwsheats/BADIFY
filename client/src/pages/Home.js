@@ -111,7 +111,6 @@ export default function Home({ code }) {
         )}
       </div>
       <div>
-        <DailySong />
         <Player 
         accessToken={accessToken} 
         trackUri={playingTrack?.uri} />
