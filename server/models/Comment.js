@@ -3,8 +3,9 @@ const dateFormat = require('../utils/dateFormat');
 
 const commentSchema = new Schema(
     {
-        userName: {
-            type: String,
+        username: {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
             required: true
         },
         commentText: {
