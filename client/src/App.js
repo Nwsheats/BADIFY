@@ -21,6 +21,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
+import DailySong from './components/DailySong';
 //import Forum from './pages/Forum';
 
 
@@ -47,6 +48,7 @@ const client = new ApolloClient({
 
 function App() {
   return (
+    <ApolloProvider client={client}>
       <Router>
         <div>
         <Header></Header>
@@ -55,11 +57,13 @@ function App() {
           {/*<Route path='/Forum' element={<Forum/>} />*/}
           <Route path='/Login' element={<Login/>} />
           <Route path='/Signup' element={<Signup/>} />
+          <Route path='/' element={<Home/>} />
           <Route path='/Profile' element={<Profile/>} />
         </Routes>
         </div>
         <Footer></Footer>
       </Router>
+      </ApolloProvider>
   );
 }
 
