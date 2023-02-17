@@ -36,7 +36,26 @@ export const QUERY_SONG = gql`
     }
 `;
 
-export const QUERY_COMMENT = gql`
+export const QUERY_SONGS =gql`
+    query Songs {
+    songs {
+        _id
+        artistName
+        songDay
+        songTitle
+        submittedBy
+        createdAt
+        releaseYear
+        recordLabel
+        commentCount
+        comments {
+            _id
+        }
+    }
+}
+`;
+
+export const QUERY_COMMENT =gql`
     query comment($id: String!){
         song(_id: $id){
         ID

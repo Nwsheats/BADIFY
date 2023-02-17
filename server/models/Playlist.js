@@ -4,12 +4,6 @@ const dateFormat = require('../utils/dateFormat');
 
 const playlistSchema = new Schema(
     {
-        username: {
-            type: String,
-            required: true,
-            unique: true,
-            trim: true
-        },
         listName: {
             type: String,
             required: false
@@ -24,7 +18,13 @@ const playlistSchema = new Schema(
                 type: Schema.Types.ObjectId,
                 ref: 'Song'
             }
-        ]
+        ],
+        user_id: 
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'User',
+                required: true
+            }
 
     }
 );

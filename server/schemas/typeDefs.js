@@ -7,6 +7,7 @@ const typeDefs = gql`
         firstname: String
         lastname: String
         email: String
+        password: String
         createdAt: String
         comments: [Comment]
     }
@@ -26,15 +27,15 @@ const typeDefs = gql`
 
     type Comment {
         _id: ID
-        userName: String
+        username: String
         commentText: String
         createdAt: String
         songId: [Song]
     }
 
     type Playlist {
-        username: String
-        listName: String
+       user_id: ID!
+       listName: String
         createdAt: String
         songs: [Song] 
     }
@@ -43,6 +44,7 @@ const typeDefs = gql`
         token: ID!
         user: User
     }
+
 
     type Query {
         users: [User]
@@ -57,7 +59,13 @@ const typeDefs = gql`
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
+        addComment(commentText: String!, songId: String!, userName: String!): Comment
+#  still nee to add updatePlaylist, addSongToPlaylist, removeSongFromPlaylist
+
     }
 `;
+
+// query for Spotify Login = get token
+// query for Spotify refresh = get token
 
 module.exports = typeDefs;
