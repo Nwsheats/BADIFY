@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react'
 
-import { useState, useEffect } from "react";
-import useAuth from "../utils/spotifyAuth";
-import Player from "../components/Player/Player";
-import TrackSearchResult from "../components/SearchResults/SearchResult";
-import { Container, Form } from "react-bootstrap";
+import { useState, useEffect } from "react"
+import useAuth from "../utils/spotifyAuth"
+import Player from "../components/Player/Player"
+import TrackSearchResult from "../components/SearchResults/SearchResult"
+import { Container, Form } from "react-bootstrap"
 // spotify-web-api-node also works in the browser even though it is called node
 import SpotifyWebApi from "spotify-web-api-node";
 import axios from "axios";

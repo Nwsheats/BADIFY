@@ -27,10 +27,11 @@
     "nodemon": "^2.0.7"
   },
   "dependencies": {
-    "@apollo/client": "^3.7.7",
     "body-parser": "^1.19.0",
+    "bootstrap": "^5.2.3",
     "dotenv": "^16.0.3",
     "express": "^4.17.1",
+    "mdb-react-ui-kit": "^5.1.0",
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.4",
     "spotify-web-api-node": "^5.0.2"
