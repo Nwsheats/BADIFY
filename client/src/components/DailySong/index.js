@@ -1,52 +1,55 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Jumbotron, Button } from 'react-bootstrap';
-import { useMutation, useQuery } from '@apollo/client';
+import React, { useState, useEffect, useRef } from "react";
+import { Jumbotron, Button } from "react-bootstrap";
+import { useMutation, useQuery } from "@apollo/client";
 // import { ADD_SONG_TO_PLAYLIST } from '../../utils/mutations';
-import { QUERY_SONGS, QUERY_PLAYLIST } from '../../utils/queries';
+import { QUERY_SONGS, QUERY_PLAYLIST } from "../../utils/queries";
+import { songsData } from "../Data/data";
 
-    // const [songTitle, setTitle] = useState('');
-    // const [songArtist, setArtist] = useState('');
-    // const [addSongToPlaylist, {error}] = useMutation(ADD_SONG_TO_PLAYLIST) 
+// const [songTitle, setTitle] = useState('');
+// const [songArtist, setArtist] = useState('');
+// const [addSongToPlaylist, {error}] = useMutation(ADD_SONG_TO_PLAYLIST)
 
-    // const handleChange = (event) => {
-    //     if (event.target.value)
-    // }
-
+// const handleChange = (event) => {
+//     if (event.target.value)
+// }
 
 const DailySong = () => {
-    const { loading, data: songData } = useQuery(QUERY_SONGS);
+  const { loading, data: songData } = useQuery(QUERY_SONGS);
 
-    // credit to Alex Turpin & Koen Peters on stackoverflow: 
-    // https://stackoverflow.com/questions/8619879/javascript-calculate-the-day-of-the-year-1-366
-    const now = new Date();
-    const start = new Date(now.getFullYear(), 0, 0);
-    const diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
-    const oneDay = 1000 * 60 * 60 * 24;
-    const day = Math.floor(diff / oneDay);
+  // credit to Alex Turpin & Koen Peters on stackoverflow:
+  // https://stackoverflow.com/questions/8619879/javascript-calculate-the-day-of-the-year-1-366
+  const now = new Date();
+  const start = new Date(now.getFullYear(), 0, 0);
+  const diff =
+    now -
+    start +
+    (start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000;
+  const oneDay = 1000 * 60 * 60 * 24;
+  const day = Math.floor(diff / oneDay);
 
+  useEffect(() => {
+    if (songData) {
+      const daySong = songData.songs.filter((song) => song.songDay === day)[0];
+      console.log("daySong", daySong);
+    }
+  }, [songData]);
+
+    // let { id } = useParams()
     
-    useEffect(() => {
-        if (songData) {
-        const daySong = songData.songs.filter(song => song.songDay === day)[0]
-        console.log("daySong", daySong);
-        }
-    }, [songData])
-
-
-    return (
-        <div>
-        <Jumbotron>
+  return (
+    <div>
+      <Jumbotron>
         <h1>The Bad Song of the Day is:</h1>
-        <h2>SongTitle</h2>
-        <h2>SongArtist</h2>
-        <p>
+        {/* {songsData.slice(0, 1).map((item) => (
+          <div>
+            <h2>SongTitle: {item.Title}</h2>
+            <h2>SongArtist: {item.Artist}</h2>
+          </div>
+        ))} */}
         <Button bsstyle="primary">Add To Playlist</Button>
-        </p>
-        </Jumbotron>
-        </div>
-        );
-}
-
-
+      </Jumbotron>
+    </div>
+  );
+};
 
 export default DailySong;

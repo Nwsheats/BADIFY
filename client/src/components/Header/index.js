@@ -32,7 +32,7 @@ function Header() {
   return (
     <>
       <Navbar className="d-flex justify-content-between" bg="dark" variant="dark">
-        <Navbar.Brand href="#home">Badify</Navbar.Brand>
+        <Navbar.Brand href="#home"><img className="logo" src="./Logo.png" alt="" /></Navbar.Brand>
         <Nav className="me-auto">
           <div className="header-menu">
             <Link to="/">Home</Link>

@@ -41,8 +41,31 @@
   text-decoration: none;
   color: white; 
   margin: 0 20px;
+  font-size: 18px;
 
 }
 .header-menu a:hover {
   color:white
+}
+
+.single-playlist {
+  border: 1px solid black;
+  margin: 15px; 
+  padding: 10px;
+
+}
+
+.single-comment {
+  border: 1px solid black;
+  margin: 15px; 
+  padding: 10px;
+  
+}
+
+.logo{
+  height: 150px;
+}
+
+.navbar {
+  padding:0
 }
