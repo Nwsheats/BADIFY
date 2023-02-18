@@ -29,9 +29,9 @@ const resolvers = {
     comment: async (parent, { _id }) => {
       return Comment.findOne({ _id })
     },
-    playlist: async (parent, { _id }) => {
-      return Playlist.findOne({ _id })
-    },
+    // playlist: async (parent, { _id }) => {
+    //   return Playlist.findOne({ _id })
+    // },
     songs: async () => {
       return Song.find()
         .populate('comments');
@@ -84,39 +84,41 @@ const resolvers = {
     addSongToPlaylist: async (parent, args, context) => {
       if (context.user) {
         console.log("songId", args.songId)
-      return Playlist.findOneAndUpdate(
-        { _id: args.songId },
-        { $addToSet: {
-          songs: { songTitle: args.songTitle, artistName: args.artistName },
-        }
-        },
-        {
-          new: true,
-          // runValidators: true,
-        },
-      );
+        console.log("userId", context.user)
+        return User.findOneAndUpdate(
+          { _id: args.userId },
+          {
+            $addToSet: {
+              playlist: args.songId
+            }
+          },
+          {
+            new: true,
+            runValidators: true,
+          },
+        );
       }
       throw new AuthenticationError('You need to be logged in!')
-        // push to the song sub document array in the Playlist db
-        // research mongoose pushing into a sub document array.
+      // push to the song sub document array in the Playlist db
+      // research mongoose pushing into a sub document array.
     }
   },
 
-    // intended to take the new songs from addSongToPlaylist and/or any other changes like 
-    // Playlist name and update both, returning a new Playlist with all the updated data.
-    // updatePlaylist: async (parent, args, context) => {
-    //   if (context.user) {
-    //     const playlist = await Playlist.findOneAndUpdate(
-    //       { _id: context.user.id},
-    //       { listName: context.listName },
-    //       { songs: args },
-    //       { new: true }
-    //       );
+  // intended to take the new songs from addSongToPlaylist and/or any other changes like 
+  // Playlist name and update both, returning a new Playlist with all the updated data.
+  // updatePlaylist: async (parent, args, context) => {
+  //   if (context.user) {
+  //     const playlist = await Playlist.findOneAndUpdate(
+  //       { _id: context.user.id},
+  //       { listName: context.listName },
+  //       { songs: args },
+  //       { new: true }
+  //       );
 
-    //       return new Playlist(playlist);
-    //   }
-    // },
-  };
+  //       return new Playlist(playlist);
+  //   }
+  // },
+};
 
 
 module.exports = resolvers;
