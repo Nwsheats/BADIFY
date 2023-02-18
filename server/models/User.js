@@ -41,10 +41,15 @@ const userSchema = new Schema(
                 ref: 'Comment'
             }
         ],
+        listname: {
+            type: String,
+            default: "My Terrible List",
+            required: true
+        },
         playlist: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'Playlist'
+                ref: 'Song'
             }
         ]
 

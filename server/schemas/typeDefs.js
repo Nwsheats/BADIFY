@@ -10,6 +10,8 @@ const typeDefs = gql`
         password: String
         createdAt: String
         comments: [Comment]
+        playlist: [Song]
+        listname: String
     }
 
     type Song {
@@ -33,12 +35,12 @@ const typeDefs = gql`
         songId: [Song]
     }
 
-    type Playlist {
-        user_id: ID!
-        listName: String
-        createdAt: String
-        songs: [Song] 
-    }
+#    type Playlist {
+#        user_id: ID!
+#        listName: String
+#        createdAt: String
+#        songs: [Song] 
+#    }
 
     type Auth {
         token: ID!
@@ -51,7 +53,7 @@ const typeDefs = gql`
         user(username: String): User
         comments(songId: String, username: String): [Comment]
         comment(_id: String): Comment
-        playlist(_id: String): Playlist
+    #   playlist(_id: String): Playlist
         songs: [Song]
         song(_id: String): Song
     }
@@ -60,9 +62,9 @@ const typeDefs = gql`
         login(username: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
         addComment(commentText: String!, songId: String!, userName: String!): Comment
-        addSongToPlaylist(songId: ID, songDay: Int, songTitle: String!, artistName: String!): Playlist
-        updatePlaylist(listName: String, songs: [String]): Playlist
-        removeSongFromPlaylist(songId: ID!): Playlist
+        addSongToPlaylist(songId: ID, songDay: Int, songTitle: String!, artistName: String!): User
+   #    updatePlaylist(listName: String, songs: [String]): Playlist
+        removeSongFromPlaylist(songId: ID!): User
 #  still nee to add updatePlaylist, addSongToPlaylist, removeSongFromPlaylist
 
     }
