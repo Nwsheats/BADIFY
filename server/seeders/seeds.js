@@ -12,7 +12,7 @@ db.once('open', async () => {
       
       await User.create(userSeeds);
       await Song.create(songSeeds);
-      await Playlist.create(playlistSeeds)
+      // await Playlist.create(playlistSeeds)
     }
     catch (err) {
         console.error(err);

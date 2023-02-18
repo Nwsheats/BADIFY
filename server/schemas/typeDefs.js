@@ -57,9 +57,12 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        login(email: String!, password: String!): Auth
+        login(username: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
         addComment(commentText: String!, songId: String!, userName: String!): Comment
+        addSongToPlaylist(songId: ID, songDay: Int, songTitle: String!, artistName: String!): Playlist
+        updatePlaylist(listName: String, songs: [String]): Playlist
+        removeSongFromPlaylist(songId: ID!): Playlist
 #  still nee to add updatePlaylist, addSongToPlaylist, removeSongFromPlaylist
 
     }

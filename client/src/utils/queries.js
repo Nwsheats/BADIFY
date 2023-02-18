@@ -37,7 +37,7 @@ export const QUERY_SONG = gql`
 `;
 
 export const QUERY_SONGS =gql`
-    query Songs {
+    {
     songs {
         _id
         artistName
