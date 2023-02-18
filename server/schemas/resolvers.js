@@ -42,8 +42,8 @@ const resolvers = {
     },
   },
   Mutation: {
-    login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+    login: async (parent, { username, password }) => {
+      const user = await User.findOne({ username });
 
       if (!user) {
         throw new AuthenticationError('Incorrect credentials');
@@ -79,11 +79,43 @@ const resolvers = {
       }
       //updatePlaylist, addSongToPlaylist, removeSongFromPlaylist,  
       //updatePlaylist: sending in the name and the full song playlist
-
+    },
+    // intended to add the DailySong to the playlist database
+    addSongToPlaylist: async (parent, { songId, songTitle, songArtist }, context) => {
+      if (context.user) {
+      return Playlist.findOneAndUpdate(
+        { _id: songId },
+        { $addToSet: {
+          songs: { songTitle, songArtist },
+        }
+        },
+        {
+          new: true,
+          runValidators: true,
+        },
+      );
+      }
+      throw new AuthenticationError('You need to be logged in!')
+        // push to the song sub document array in the Playlist db
+        // research mongoose pushing into a sub document array.
     }
+  },
 
-  }
-};
+    // intended to take the new songs from addSongToPlaylist and/or any other changes like 
+    // Playlist name and update both, returning a new Playlist with all the updated data.
+    // updatePlaylist: async (parent, args, context) => {
+    //   if (context.user) {
+    //     const playlist = await Playlist.findOneAndUpdate(
+    //       { _id: context.user.id},
+    //       { listName: context.listName },
+    //       { songs: args },
+    //       { new: true }
+    //       );
+
+    //       return new Playlist(playlist);
+    //   }
+    // },
+  };
 
 
 module.exports = resolvers;
