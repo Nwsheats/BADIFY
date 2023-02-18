@@ -34,8 +34,8 @@ const typeDefs = gql`
     }
 
     type Playlist {
-       user_id: ID!
-       listName: String
+        user_id: ID!
+        listName: String
         createdAt: String
         songs: [Song] 
     }

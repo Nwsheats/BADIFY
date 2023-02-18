@@ -1,11 +1,11 @@
 [
     {
-        "username":"Ben",
+        "user_id":"63eebe555cee2ee3939b10ee",
         "listName":"test playlist 1"
         
     },
     {
-        "username":"melisa",
+        "user_id":"63eebe555cee2ee3939b10ed",
         "listName":"test playlist 2"
     }
 ]

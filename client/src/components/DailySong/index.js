@@ -16,6 +16,8 @@ import { QUERY_SONGS, QUERY_PLAYLIST } from '../../utils/queries';
 const DailySong = () => {
     const { loading, data: songData } = useQuery(QUERY_SONGS);
 
+    const [ songState, setSongState ] = useState({});
+
     // credit to Alex Turpin & Koen Peters on stackoverflow: 
     // https://stackoverflow.com/questions/8619879/javascript-calculate-the-day-of-the-year-1-366
     const now = new Date();
@@ -24,11 +26,13 @@ const DailySong = () => {
     const oneDay = 1000 * 60 * 60 * 24;
     const day = Math.floor(diff / oneDay);
 
+
     
     useEffect(() => {
         if (songData) {
         const daySong = songData.songs.filter(song => song.songDay === day)[0]
         console.log("daySong", daySong);
+        setSongState(daySong);
         }
     }, [songData])
 
@@ -37,8 +41,8 @@ const DailySong = () => {
         <div>
         <Jumbotron>
         <h1>The Bad Song of the Day is:</h1>
-        <h2>SongTitle</h2>
-        <h2>SongArtist</h2>
+        <h2>{songState.songTitle}</h2>
+        <h2>{songState.artistName}</h2>
         <p>
         <Button bsstyle="primary">Add To Playlist</Button>
         </p>
