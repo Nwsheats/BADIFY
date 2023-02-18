@@ -81,17 +81,18 @@ const resolvers = {
       //updatePlaylist: sending in the name and the full song playlist
     },
     // intended to add the DailySong to the playlist database
-    addSongToPlaylist: async (parent, { songId, songTitle, songArtist }, context) => {
+    addSongToPlaylist: async (parent, args, context) => {
       if (context.user) {
+        console.log("songId", args.songId)
       return Playlist.findOneAndUpdate(
-        { _id: songId },
+        { _id: args.songId },
         { $addToSet: {
-          songs: { songTitle, songArtist },
+          songs: { songTitle: args.songTitle, artistName: args.artistName },
         }
         },
         {
           new: true,
-          runValidators: true,
+          // runValidators: true,
         },
       );
       }
