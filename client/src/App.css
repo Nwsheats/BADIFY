@@ -36,9 +36,13 @@
     transform: rotate(360deg);
   }
 }
-.banner {
-  height: 40vh;
-  width: 100%;
-  background-color: black;
-  margin: auto;
+
+.header-menu a {
+  text-decoration: none;
+  color: white; 
+  margin: 0 20px;
+
+}
+.header-menu a:hover {
+  color:white
 }
