@@ -16,36 +16,34 @@ import { songsData } from "../Data/data";
 const DailySong = () => {
   const { loading, data: songData } = useQuery(QUERY_SONGS);
 
-  // credit to Alex Turpin & Koen Peters on stackoverflow:
-  // https://stackoverflow.com/questions/8619879/javascript-calculate-the-day-of-the-year-1-366
-  const now = new Date();
-  const start = new Date(now.getFullYear(), 0, 0);
-  const diff =
-    now -
-    start +
-    (start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000;
-  const oneDay = 1000 * 60 * 60 * 24;
-  const day = Math.floor(diff / oneDay);
+    const [ songState, setSongState ] = useState({});
 
-  useEffect(() => {
-    if (songData) {
-      const daySong = songData.songs.filter((song) => song.songDay === day)[0];
-      console.log("daySong", daySong);
-    }
-  }, [songData]);
+    // credit to Alex Turpin & Koen Peters on stackoverflow: 
+    // https://stackoverflow.com/questions/8619879/javascript-calculate-the-day-of-the-year-1-366
+    const now = new Date();
+    const start = new Date(now.getFullYear(), 0, 0);
+    const diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
+    const oneDay = 1000 * 60 * 60 * 24;
+    const day = Math.floor(diff / oneDay);
 
-    // let { id } = useParams()
+
     
-  return (
-    <div>
-      <Jumbotron>
+    useEffect(() => {
+        if (songData) {
+        const daySong = songData.songs.filter(song => song.songDay === day)[0]
+        console.log("daySong", daySong);
+        setSongState(daySong);
+        }
+    }, [songData])
+
+
+    return (
+        <div>
+        <Jumbotron>
         <h1>The Bad Song of the Day is:</h1>
-        {/* {songsData.slice(0, 1).map((item) => (
-          <div>
-            <h2>SongTitle: {item.Title}</h2>
-            <h2>SongArtist: {item.Artist}</h2>
-          </div>
-        ))} */}
+        <h2>{songState.songTitle}</h2>
+        <h2>{songState.artistName}</h2>
+        <p>
         <Button bsstyle="primary">Add To Playlist</Button>
       </Jumbotron>
     </div>
