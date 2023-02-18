@@ -43,7 +43,7 @@ const DailySong = () => {
         <h1>The Bad Song of the Day is:</h1>
         <h2>{songState.songTitle}</h2>
         <h2>{songState.artistName}</h2>
-        <p>
+    
         <Button bsstyle="primary">Add To Playlist</Button>
       </Jumbotron>
     </div>
