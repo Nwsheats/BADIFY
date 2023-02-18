@@ -6,14 +6,14 @@ import DailySong from "../components/DailySong";
 import TrackSearchResult from "../components/SearchResults/SearchResult"
 import { Container, Form } from "react-bootstrap"
 // spotify-web-api-node also works in the browser even though it is called node
-import SpotifyWebApi from "spotify-web-api-node"
-import axios from "axios"
+import SpotifyWebApi from "spotify-web-api-node";
+import axios from "axios";
 
 
 const spotifyApi = new SpotifyWebApi({
   // client ID is public information so no need to hide it
   clientId: "dde5d7420bed4152a0ea41e85917b4ab",
-})
+});
 
 export default function Home({ code }) {
   // const accessToken = useAuth(code)
@@ -24,12 +24,12 @@ export default function Home({ code }) {
 
   // this is how we pass what we select in to the player
   function chooseTrack(track) {
-    setPlayingTrack(track)
+    setPlayingTrack(track);
     // clears out search after we select a track to play
-    setSearch("")
-    setLyrics("")
+    setSearch("");
+    setLyrics("");
   }
-  
+
   // hook for api to get lyrics
   // useEffect(() => {
   //   if (!playingTrack) return
@@ -88,14 +88,15 @@ export default function Home({ code }) {
   // style={{ overflowY: "auto" }} will allow us to scroll down through the returned list
   return (
     <Container className="d-flex flex-column py-2" style={{ height: "100vh" }}>
+   {/* <Banner/> */}
       <Form.Control
         type="search"
         placeholder="Search Songs/Artists"
         value={search}
-        onChange={e => setSearch(e.target.value)}
+        onChange={(e) => setSearch(e.target.value)}
       />
       <div className="flex-grow-1 my-2" style={{ overflowY: "auto" }}>
-        {searchResults.map(track => (
+        {searchResults.map((track) => (
           <TrackSearchResult
             track={track}
             key={track.uri}
@@ -118,7 +119,5 @@ export default function Home({ code }) {
         trackUri={playingTrack?.uri} />
       </div>
     </Container>
-  )
+  );
 }
-
-

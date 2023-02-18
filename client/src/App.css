@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+.banner {
+  height: 40vh;
+  width: 100%;
+  background-color: black;
+  margin: auto;
+}
