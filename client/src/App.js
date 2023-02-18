@@ -52,7 +52,7 @@ function App() {
         <div>
         <Header></Header>
         <Routes>
-        <Route path='/Home' element={<Home/>} />
+        {/* <Route path='/Home' element={<Home/>} /> */}
           {/*<Route path='/Forum' element={<Forum/>} />*/}
           <Route path='/Login' element={<Login/>} />
           <Route path='/Signup' element={<Signup/>} />
