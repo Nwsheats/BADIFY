@@ -2,7 +2,7 @@ const express = require('express');
 const {ApolloServer} = require('apollo-server-express');
 const path = require('path');
 
-const {typeDefs, resolvers} = require('./schemas');
+const {typeDefs, resolvers, rootResolver} = require('./schemas');
 const {authMiddleware} = require('./utils/auth');
 const db = require('./config/connection');
 
@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 });
 
 // Create a new instance of an Apollo server with the GraphQL schema
-const startApolloServer = async (typeDefs, resolvers) => {
+const startApolloServer = async (typeDefs, resolvers, rootResolver) => {
   await server.start();
   server.applyMiddleware({ app });
 
@@ -47,4 +47,4 @@ const startApolloServer = async (typeDefs, resolvers) => {
 
 
 // Call the async function to start the server
-startApolloServer(typeDefs, resolvers);
+startApolloServer(typeDefs, resolvers, rootResolver);

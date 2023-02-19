@@ -11,7 +11,7 @@
     "start": "node server/server.js",
     "devStart": "concurrently \"cd server && npm run nodemon server.js\" \"cd client && npm start\"",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
-    "install": "cd server && npm i && cd ../client && npm i",
+    "install": "cd server && npm i && cd ../client && npm i --legacy-peer-deps",
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build"
   },
@@ -34,6 +34,9 @@
     "mdb-react-ui-kit": "^5.1.0",
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.4",
+    "querystring": "^0.2.0",
+    "cors": "^2.8.5",
+    "request": "^2.88.0",
     "spotify-web-api-node": "^5.0.2"
   },
   "bugs": {
