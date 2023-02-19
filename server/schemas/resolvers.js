@@ -29,9 +29,9 @@ const resolvers = {
     comment: async (parent, { _id }) => {
       return Comment.findOne({ _id })
     },
-    playlist: async (parent, { _id }) => {
-      return Playlist.findOne({ _id })
-    },
+    // playlist: async (parent, { _id }) => {
+    //   return Playlist.findOne({ _id })
+    // },
     songs: async () => {
       return Song.find()
         .populate('comments');
@@ -87,16 +87,19 @@ const resolvers = {
     addSongToPlaylist: async (parent, args, context) => {
       if (context.user) {
         console.log("songId", args.songId)
-        return Playlist.findOneAndUpdate(
-          { _id: args.songId },
+
+        console.log("userId", context.user)
+        return User.findOneAndUpdate(
+          { _id: args.userId },
           {
             $addToSet: {
-              songs: { songTitle: args.songTitle, artistName: args.artistName },
+              playlist: args.songId
             }
           },
           {
             new: true,
-            // runValidators: true,
+
+            runValidators: true,
           },
         );
       }

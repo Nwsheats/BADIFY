@@ -1,20 +1,20 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Jumbotron, Button } from 'react-bootstrap';
-import { useMutation, useQuery } from '@apollo/client';
+import React, { useState, useEffect, useRef } from "react";
+import { Jumbotron, Button } from "react-bootstrap";
+import { useMutation, useQuery } from "@apollo/client";
 // import { ADD_SONG_TO_PLAYLIST } from '../../utils/mutations';
-import { QUERY_SONGS, QUERY_PLAYLIST } from '../../utils/queries';
+import { QUERY_SONGS, QUERY_PLAYLIST } from "../../utils/queries";
+import { songsData } from "../Data/data";
 
-    // const [songTitle, setTitle] = useState('');
-    // const [songArtist, setArtist] = useState('');
-    // const [addSongToPlaylist, {error}] = useMutation(ADD_SONG_TO_PLAYLIST) 
+// const [songTitle, setTitle] = useState('');
+// const [songArtist, setArtist] = useState('');
+// const [addSongToPlaylist, {error}] = useMutation(ADD_SONG_TO_PLAYLIST)
 
-    // const handleChange = (event) => {
-    //     if (event.target.value)
-    // }
-
+// const handleChange = (event) => {
+//     if (event.target.value)
+// }
 
 const DailySong = () => {
-    const { loading, data: songData } = useQuery(QUERY_SONGS);
+  const { loading, data: songData } = useQuery(QUERY_SONGS);
 
     const [ songState, setSongState ] = useState({});
 
@@ -43,14 +43,11 @@ const DailySong = () => {
         <h1>The Bad Song of the Day is:</h1>
         <h2>{songState.songTitle}</h2>
         <h2>{songState.artistName}</h2>
-        <p>
+    
         <Button bsstyle="primary">Add To Playlist</Button>
-        </p>
-        </Jumbotron>
-        </div>
-        );
-}
-
-
+      </Jumbotron>
+    </div>
+  );
+};
 
 export default DailySong;
