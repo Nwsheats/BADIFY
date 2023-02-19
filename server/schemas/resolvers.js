@@ -39,9 +39,9 @@ const resolvers = {
     song: async (parent, { _id }) => {
       return Song.findOne({ _id })
         .populate('comments')
-        .populate('songUri')
-        .populate('songUrl')
-        .populate('songImage');
+        // .populate('songUri')
+        // .populate('songUrl')
+        // .populate('songImage');
     },
   },
   Mutation: {
@@ -86,19 +86,18 @@ const resolvers = {
     // intended to add the DailySong to the playlist database
     addSongToPlaylist: async (parent, args, context) => {
       if (context.user) {
-        console.log("songId", args.songId)
+        console.log("songId", args._id)
 
         console.log("userId", context.user)
         return User.findOneAndUpdate(
           { _id: args.userId },
           {
             $addToSet: {
-              playlist: args.songId
+              playlist: args._id
             }
           },
           {
             new: true,
-
             runValidators: true,
           },
         );
