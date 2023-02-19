@@ -2,18 +2,6 @@ import React from 'react'
 
 
 const Profile = () => {
-  const user = 'testuser1';
-  // const { username: userParam } = 'testuser1';
-
-  // const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-  //   variables: { username: userParam },
-  // });
-
-  // const user = data?.me || data?.user || {};
-
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
 
   return (
     <div class="ui center aligned grid">
