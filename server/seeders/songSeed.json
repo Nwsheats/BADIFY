@@ -63,43 +63,65 @@
         "songDay": "50",
         "songTitle": "She Drives Me Crazy",
         "artistName": "Fine Young Canibals",
-        "submittedBy": "Karli S."
+        "submittedBy": "Karli S.",
+        "songUri": "4d6eqRtpDX7tydHJGDZUBQ",
+        "songUrl": "https://open.spotify.com/track/4d6eqRtpDX7tydHJGDZUBQ",
+        "songImage": "./images/FYC-drives-crazy.png"
     },
     {
         "songDay": "51",
         "songTitle": "My Heart Will Go On",
         "artistName": "Celine Dion",
-        "submittedBy": "Gwen S."
+        "submittedBy": "Gwen S.",
+        "songUri": "33LC84JgLvK2KuW43MfaNq",
+        "songUrl": "https://open.spotify.com/track/33LC84JgLvK2KuW43MfaNq",
+        "songImage": "./images/celine-dion-heart-go-on.png"
     },
     {
         "songDay": "52",
         "songTitle": "Rio",
         "artistName": "Duran Duran",
-        "submittedBy": "Kelly G."
+        "submittedBy": "Kelly G.",
+        "songUri": "43eBgYRTmu5BJnCJDBU5Hb",
+        "songUrl": "https://open.spotify.com/track/43eBgYRTmu5BJnCJDBU5Hb",
+        "songImage": "./images/duran-duran-rio.png"
     },
     {
         "songDay": "53",
         "songTitle": "Photograph",
         "artistName": "Nickleback",
-        "submittedBy": "Jennifer H."
+        "submittedBy": "Jennifer H.",
+        "songUri": "3hb2ScEVkGchcAQqrPLP0R",
+        "songImage": "./images/nickleback-photograph.png",
+        "songUrl": "https://open.spotify.com/track/3hb2ScEVkGchcAQqrPLP0R",
+        "songImage": "./images/nickleback-photograph.png"
     },
     {
         "songDay": "54",
         "songTitle": "Aaron's Party (Come Get It)",
         "artistName": "Aaron Carter",
-        "submittedBy": "Jennifer H."
+        "submittedBy": "Jennifer H.",
+        "songUri": "4fF34Yf5KsfUbCORyLGpEj",
+        "songUrl": "https://open.spotify.com/track/4fF34Yf5KsfUbCORyLGpEj",
+        "songImage": "./images/aaron-party.png"
     },
     {
         "songDay": "55",
         "songTitle": "Boom Boom Pow",
         "artistName": "Black Eyed Peas",
-        "submittedBy": "Jennifer H."
+        "submittedBy": "Jennifer H.",
+        "songUri": "3opVsyWVYEAFK9bJAG8Opa",
+        "songUrl": "https://open.spotify.com/track/3opVsyWVYEAFK9bJAG8Opa",
+        "songImage": "./images/byp-boom.png"
     },
     {
         "songDay": "56",
         "songTitle": "Miracles ",
         "artistName": "Insane Clown Posse",
-        "submittedBy": "Jennifer H."
+        "submittedBy": "Jennifer H.",
+        "songUri": "56xqezACE6hys3Iz7CkDTR",
+        "songUrl": "https://open.spotify.com/track/56xqezACE6hys3Iz7CkDTR",
+        "songImage": "./images/icp-miracles.png"
     },
     {
         "songDay": "57",
