@@ -1,9 +1,9 @@
 
 import { useState, useEffect } from "react"
 // import useAuth from "../utils/spotifyAuth"
-import Player from "../components/Player/Player"
+// import Player from "../components/Player/Player"
 import DailySong from "../components/DailySong";
-import TrackSearchResult from "../components/SearchResults/SearchResult"
+// import TrackSearchResult from "../components/SearchResults/SearchResult"
 import { Container, Form } from "react-bootstrap"
 // spotify-web-api-node also works in the browser even though it is called node
 import SpotifyWebApi from "spotify-web-api-node";
@@ -95,7 +95,7 @@ export default function Home({ code }) {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <div className="flex-grow-1 my-2" style={{ overflowY: "auto" }}>
+      {/* <div className="flex-grow-1 my-2" style={{ overflowY: "auto" }}>
         {searchResults.map((track) => (
           <TrackSearchResult
             track={track}
@@ -109,15 +109,15 @@ export default function Home({ code }) {
             {lyrics}
           </div>
         )}
-      </div>
+      </div> */}
       <div className="flex-grow-1 my-2" style={{ overflowY: "auto" }}>
       <DailySong />
       </div>
-      <div>
+      {/* <div>
         <Player 
         // accessToken={accessToken} 
         trackUri={playingTrack?.uri} />
-      </div>
+      </div> */}
     </Container>
   );
 }
