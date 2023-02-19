@@ -44,6 +44,9 @@ export const QUERY_SONGS =gql`
         songDay
         songTitle
         submittedBy
+        songUri
+        songUrl
+        songImage
         createdAt
         releaseYear
         recordLabel
