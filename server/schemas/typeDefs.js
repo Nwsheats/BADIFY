@@ -20,6 +20,9 @@ const typeDefs = gql`
         songDay: Int
         songTitle: String
         artistName: String
+        songUri: String
+        songUrl: String
+        songImage: String
         recordLabel: String
         releaseYear: Int
         createdAt: String
