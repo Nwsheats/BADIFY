@@ -25,6 +25,18 @@ const songSchema = new Schema(
             type: String,
             required: true
         },
+        songUri: {
+            type: String,
+            required: false
+        },
+        songUrl: {
+            type: String,
+            required: false
+        },
+        songImage: {
+            type: String,
+            required: false
+        },
         recordLabel: {
             type: String,
             required: false
