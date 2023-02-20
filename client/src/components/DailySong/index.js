@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Jumbotron, Button } from "react-bootstrap";
 import { useMutation, useQuery } from "@apollo/client";
 // import { ADD_SONG_TO_PLAYLIST } from '../../utils/mutations';
@@ -43,8 +43,10 @@ const DailySong = () => {
         <h1>The Bad Song of the Day is:</h1>
         <h2>{songState.songTitle}</h2>
         <h2>{songState.artistName}</h2>
-    
         <Button bsstyle="primary">Add To Playlist</Button>
+        <div>
+            <div><a href={songState.songUrl}><img style={{backgroundImage: `url(${songState.songImage})`}} src={songState.songImage} alt=''></img></a></div>
+        </div>
       </Jumbotron>
     </div>
   );

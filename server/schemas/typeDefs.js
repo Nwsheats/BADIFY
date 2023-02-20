@@ -44,21 +44,6 @@ const typeDefs = gql`
         user: User
     }
 
-    input SongInput {
-        _id: String
-        songDay: Int
-        songTitle: String
-        artistName: String
-        songUri: String
-        songUrl: String
-        songImage: String
-        recordLabel: String
-        releaseYear: Int
-        createdAt: String
-        submittedBy: String
-        comments: [String]
-        commentCount: Int
-    }
 
     type Query {
         me: User
@@ -77,14 +62,9 @@ const typeDefs = gql`
         addComment(commentText: String!, songId: String!, userId: String!): Comment
         removeComment(CommentId: ID!): Comment
         addSongToPlaylist(songId: ID!): User
-    #    updatePlaylist(listName: String, songs: [String]): Playlist
         removeSongFromPlaylist(songId: ID!): User
-    #  still nee to add updatePlaylist, addSongToPlaylist, removeSongFromPlaylist
     
     }
 `;
-
-// query for Spotify Login = get token
-// query for Spotify refresh = get token
 
 module.exports = typeDefs;
