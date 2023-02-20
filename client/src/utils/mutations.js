@@ -25,16 +25,31 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_COMMENT = gql`
-  mutation addComment($songTitle: String!, $commentText: String!) {
-    addComment(songTitle: $songTitle, commentText: $commentText) {
+mutation AddComment($commentText: String!, $songId: String!, $userId: String!) {
+  addComment(commentText: $commentText, songId: $songId, userId: $userId) {
+    _id
+    commentText
+    songId {
       _id
-      userName
-      commentText
-      createdAt
-      songId{
-        _id
-      }
+      artistName
+      songTitle
     }
   }
+}
 `;
-// updatePlaylist, addSongToPlaylist, removeSongFromPlaylist,  
+
+export const ADD_SONG_TO_PLAYLIST = gql`
+mutation addSongToPlaylist($songId: ID!) {
+  addSongToPlaylist(songId: $songId) {
+    _id
+  }
+}
+`;
+
+export const REMOVE_SONG_FROM_PLAYLIST = gql`
+mutation removeSongFromPlaylist($songId: ID!) {
+  removeSongFromPlaylist(songId: $songId) {
+    _id
+  }
+}
+`;

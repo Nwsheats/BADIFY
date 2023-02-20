@@ -39,13 +39,6 @@ const typeDefs = gql`
         songId: [Song]
     }
 
-#    type Playlist {
-#        user_id: ID!
-#        listName: String
-#        createdAt: String
-#        songs: [Song] 
-#    }
-
     type Auth {
         token: ID!
         user: User
@@ -56,7 +49,6 @@ const typeDefs = gql`
         user(username: String): User
         comments(songId: String, username: String): [Comment]
         comment(_id: String): Comment
-    #   playlist(_id: String): Playlist
         songs: [Song]
         song(_id: String): Song
     
@@ -65,8 +57,9 @@ const typeDefs = gql`
     type Mutation {
         login(username: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
-        addComment(commentText: String!, songId: String!, userName: String!): Comment
-        addSongToPlaylist(songId: ID, songDay: Int, songTitle: String, artistName: String): User
+        addComment(commentText: String!, songId: String!, userId: String!): Comment
+        removeComment(CommentId: ID!): Comment
+        addSongToPlaylist(songId: ID!): User
     #    updatePlaylist(listName: String, songs: [String]): Playlist
         removeSongFromPlaylist(songId: ID!): User
     #  still nee to add updatePlaylist, addSongToPlaylist, removeSongFromPlaylist

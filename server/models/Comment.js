@@ -3,7 +3,7 @@ const dateFormat = require('../utils/dateFormat');
 
 const commentSchema = new Schema(
     {
-        username: {
+        userId: {
             type: Schema.Types.ObjectId,
             ref: 'User',
             required: true
@@ -17,11 +17,12 @@ const commentSchema = new Schema(
             default: Date.now,
             get: timestamp => dateFormat(timestamp)
         },
-        songId: {
-
-            type: Schema.Types.ObjectId,
-            ref: 'Song'
-        }
+        songId: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Song'
+            }
+        ]
     });
 
 const Comment = model('Comment', commentSchema);
