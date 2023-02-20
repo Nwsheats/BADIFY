@@ -30,6 +30,9 @@ export const QUERY_SONG = gql`
         releaseYear
         createdAt
         submittedBy
+        songUri
+        songUrl
+        songImage
         comments
         commentCount
         }
@@ -94,28 +97,34 @@ export const QUERY_PLAYLIST = gql`
 `;
 
 export const QUERY_ME = gql`
-{
+    {
     me {
-    _id
-    username
-    email
-    friendCount
-    thoughts {
-        _id
-        thoughtText
-        createdAt
-        reactionCount
-        reactions {
         _id
         createdAt
-        reactionBody
+        email
+        listname
+        password
         username
+        playlist {
+            _id
+            artistName
+            commentCount
+            createdAt
+            recordLabel
+            releaseYear
+            songDay
+            songImage
+            songTitle
+            songUri
+            songUrl
+            submittedBy
         }
-    }
-    friends {
-        _id
-        username
-    }
+        comments {
+            _id
+            commentText
+            createdAt
+            username
+        }
     }
 }
 `;

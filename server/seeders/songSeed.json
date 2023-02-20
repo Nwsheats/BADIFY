@@ -66,7 +66,7 @@
         "submittedBy": "Karli S.",
         "songUri": "4d6eqRtpDX7tydHJGDZUBQ",
         "songUrl": "https://open.spotify.com/track/4d6eqRtpDX7tydHJGDZUBQ",
-        "songImage": "./images/FYC-drives-crazy.png"
+        "songImage": "../images/FYC-drives-crazy.png"
     },
     {
         "songDay": "51",
@@ -75,7 +75,7 @@
         "submittedBy": "Gwen S.",
         "songUri": "33LC84JgLvK2KuW43MfaNq",
         "songUrl": "https://open.spotify.com/track/33LC84JgLvK2KuW43MfaNq",
-        "songImage": "./images/celine-dion-heart-go-on.png"
+        "songImage": "../images/celine-dion-heart-go-on.png"
     },
     {
         "songDay": "52",
@@ -84,7 +84,7 @@
         "submittedBy": "Kelly G.",
         "songUri": "43eBgYRTmu5BJnCJDBU5Hb",
         "songUrl": "https://open.spotify.com/track/43eBgYRTmu5BJnCJDBU5Hb",
-        "songImage": "./images/duran-duran-rio.png"
+        "songImage": "../images/duran-duran-rio.png"
     },
     {
         "songDay": "53",
@@ -93,7 +93,7 @@
         "submittedBy": "Jennifer H.",
         "songUri": "3hb2ScEVkGchcAQqrPLP0R",
         "songUrl": "https://open.spotify.com/track/3hb2ScEVkGchcAQqrPLP0R",
-        "songImage": "./images/nickleback-photograph.png"
+        "songImage": "../images/nickleback-photograph.png"
     },
     {
         "songDay": "54",
@@ -102,7 +102,7 @@
         "submittedBy": "Jennifer H.",
         "songUri": "4fF34Yf5KsfUbCORyLGpEj",
         "songUrl": "https://open.spotify.com/track/4fF34Yf5KsfUbCORyLGpEj",
-        "songImage": "./images/aaron-party.png"
+        "songImage": "../images/aaron-party.png"
     },
     {
         "songDay": "55",
@@ -111,7 +111,7 @@
         "submittedBy": "Jennifer H.",
         "songUri": "3opVsyWVYEAFK9bJAG8Opa",
         "songUrl": "https://open.spotify.com/track/3opVsyWVYEAFK9bJAG8Opa",
-        "songImage": "./images/byp-boom.png"
+        "songImage": "../images/byp-boom.png"
     },
     {
         "songDay": "56",
@@ -120,7 +120,7 @@
         "submittedBy": "Jennifer H.",
         "songUri": "56xqezACE6hys3Iz7CkDTR",
         "songUrl": "https://open.spotify.com/track/56xqezACE6hys3Iz7CkDTR",
-        "songImage": "./images/icp-miracles.png"
+        "songImage": "../images/icp-miracles.png"
     },
     {
         "songDay": "57",

@@ -4,6 +4,18 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
+    me: async (parent, args, context) => {
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id })
+          .select('-__v -password')
+          .populate('comments')
+          .populate('playlist');
+
+        return userData;
+      }
+
+      throw new AuthenticationError('Not logged in');
+    },
     users: async () => {
       return User.find()
         .select('-__v -password')
@@ -118,13 +130,11 @@ const resolvers = {
             runValidators: true,
           },
         );
+        return updatedUser;
       }
       throw new AuthenticationError('You need to be logged in!')
-      // push to the song sub document array in the Playlist db
-      // research mongoose pushing into a sub document array.
-    }
+    },
   },
 };
-
 
 module.exports = resolvers;

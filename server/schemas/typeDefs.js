@@ -44,7 +44,24 @@ const typeDefs = gql`
         user: User
     }
 
+    input SongInput {
+        _id: String
+        songDay: Int
+        songTitle: String
+        artistName: String
+        songUri: String
+        songUrl: String
+        songImage: String
+        recordLabel: String
+        releaseYear: Int
+        createdAt: String
+        submittedBy: String
+        comments: [String]
+        commentCount: Int
+    }
+
     type Query {
+        me: User
         users: [User]
         user(username: String): User
         comments(songId: String, username: String): [Comment]
