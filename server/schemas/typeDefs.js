@@ -51,7 +51,24 @@ const typeDefs = gql`
         user: User
     }
 
+    input SongInput {
+        _id: String
+        songDay: Int
+        songTitle: String
+        artistName: String
+        songUri: String
+        songUrl: String
+        songImage: String
+        recordLabel: String
+        releaseYear: Int
+        createdAt: String
+        submittedBy: String
+        comments: [String]
+        commentCount: Int
+    }
+
     type Query {
+        me: User
         users: [User]
         user(username: String): User
         comments(songId: String, username: String): [Comment]
@@ -66,7 +83,7 @@ const typeDefs = gql`
         login(username: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
         addComment(commentText: String!, songId: String!, userName: String!): Comment
-        addSongToPlaylist(songId: ID, songDay: Int, songTitle: String, artistName: String): User
+        addSongToPlaylist(songId: ID!): User
     #    updatePlaylist(listName: String, songs: [String]): Playlist
         removeSongFromPlaylist(songId: ID!): User
     #  still nee to add updatePlaylist, addSongToPlaylist, removeSongFromPlaylist

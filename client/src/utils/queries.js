@@ -30,6 +30,9 @@ export const QUERY_SONG = gql`
         releaseYear
         createdAt
         submittedBy
+        songUri
+        songUrl
+        songImage
         comments
         commentCount
         }

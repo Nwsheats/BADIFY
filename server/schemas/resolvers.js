@@ -4,6 +4,18 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
+    me: async (parent, args, context) => {
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id })
+          .select('-__v -password')
+          .populate('comments')
+          .populate('playlist');
+
+        return userData;
+      }
+
+      throw new AuthenticationError('Not logged in');
+    },
     users: async () => {
       return User.find()
         .select('-__v -password')
@@ -80,20 +92,18 @@ const resolvers = {
 
         return comment;
       }
-      //updatePlaylist, addSongToPlaylist, removeSongFromPlaylist,  
-      //updatePlaylist: sending in the name and the full song playlist
     },
     // intended to add the DailySong to the playlist database
-    addSongToPlaylist: async (parent, args, context) => {
+    addSongToPlaylist: async (parent, { songId }, context) => {
       if (context.user) {
-        console.log("songId", args._id)
+        console.log("songId", songId)
 
         console.log("userId", context.user)
-        return User.findOneAndUpdate(
-          { _id: args.userId },
+        const updatedUser = User.findOneAndUpdate(
+          { _id: context.user._id },
           {
             $addToSet: {
-              playlist: args._id
+              playlist: songId
             }
           },
           {
@@ -101,28 +111,13 @@ const resolvers = {
             runValidators: true,
           },
         );
+        return updatedUser;
       }
       throw new AuthenticationError('You need to be logged in!')
-      // push to the song sub document array in the Playlist db
-      // research mongoose pushing into a sub document array.
-    }
+    },
   },
 
-  // intended to take the new songs from addSongToPlaylist and/or any other changes like 
-  // Playlist name and update both, returning a new Playlist with all the updated data.
-  // updatePlaylist: async (parent, args, context) => {
-  //   if (context.user) {
-  //     const playlist = await Playlist.findOneAndUpdate(
-  //       { _id: context.user.id},
-  //       { listName: context.listName },
-  //       { songs: args },
-  //       { new: true }
-  //       );
 
-  //       return new Playlist(playlist);
-  //   }
-  // },
-};
-
+}
 
 module.exports = resolvers;

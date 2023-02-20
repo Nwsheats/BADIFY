@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcryptjs');
 const dateFormat = require('../utils/dateFormat');
+const playlist = require('./Song')
 
 
 const userSchema = new Schema(
