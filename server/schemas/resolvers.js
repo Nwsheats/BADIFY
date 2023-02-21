@@ -77,6 +77,7 @@ const resolvers = {
       return { token, user };
     },
     //addComment
+    // need to work on this and make sure that comments are pushed to Songs
     addComment: async (parent, args, context) => {
       if (context.user) {
         const comment = await Comment.create({ ...args, username: context.user.username });
@@ -94,8 +95,8 @@ const resolvers = {
     addSongToPlaylist: async (parent, { songId }, context) => {
       if (context.user) {
         console.log("songId", songId)
-
         console.log("userId", context.user)
+        
         return User.findOneAndUpdate(
           { _id: context.user._id },
           {
@@ -111,8 +112,28 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!')
       // push to the song sub document array in the Playlist db
-      // research mongoose pushing into a sub document array.
     },
+    // KEEP THIS ONE AROUND: this will stop the same song from being added 
+    //to the playlist. Cycle in this one when testing is done on the above.
+  //   addSongToPlaylist: async (parent, { songId }, context) => {
+  //     if (context.user) {
+  //       const userId = context.user._id;
+  //       console.log("songId", songId)
+  //       console.log("userId", context.user)
+  //       const playlist = await User.findById(userId).select('playlist').lean();
+  //       if (playlist.playlist.includes(songId)) {
+  //         throw new UserInputError('Song is already in the playlist');
+  //       }
+  //       const updatedUser = await User.findOneAndUpdate(
+  //         userId,
+  //         { $addToSet: { playlist: songId }},
+  //         { new: true },
+  //       ).lean();
+  //       return updatedUser;
+  //     } else {
+  //       throw new AuthenticationError('You need to be logged in!')
+  //   }
+  // },
     removeSongFromPlaylist: async (parent, { songId }, context) => {
       if (context.user) {
         console.log("songId", songId)

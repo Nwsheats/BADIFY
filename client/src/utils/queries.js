@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_USER = gql`
-    query user($username: String!) {
-        user(username: $username) {
+    query user($_id: ID!) {
+        user(_id: $id) {
         _id
         username
         firstname
@@ -65,7 +65,7 @@ export const QUERY_COMMENT =gql`
     query comment($id: String!){
         song(_id: $id){
         ID
-        userName
+        username
         commentText
         createdAt
         songId
@@ -74,15 +74,17 @@ export const QUERY_COMMENT =gql`
 `;
 
 export const QUERY_COMMENTS = gql`
-    query comments($songId: String!, $username: String!){
-        song(songId: $songId, username: $username){
+    query comments($songId: String!){
+        song(songId: $songId){
+        comments {
         ID
-        userName
+        username
         commentText
         createdAt
         songId
         }
     }
+}
 `;
 
 // export const QUERY_PLAYLIST = gql`
