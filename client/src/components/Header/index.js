@@ -15,11 +15,8 @@ function Header() {
           <div className="header-menu">
             <Link to="/">Home</Link>
             <Link to="/Profile">Profile</Link>
-            <li className="mx-1">
-              <a href="/" onClick={() => Auth.logout()}>
-                Logout
-              </a>
-            </li>
+              <Link to="/" onClick={() => Auth.logout()}>
+                Logout</Link>     
           </div>
         </Nav>
     </>

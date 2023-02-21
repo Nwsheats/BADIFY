@@ -3,7 +3,12 @@ import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import 'semantic-ui-css/semantic.min.css';
 import 'semantic-ui-react'; 
+import { Button , Card , Container , Form } from "react-bootstrap";
+
+
+
 import Auth from "../utils/auth";
+
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ username: "", password: "" });
@@ -41,39 +46,44 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-md-6">
-        <div className="card">
-          <h4 className="card-header">Login</h4>
-          <div className="card-body">
-            <form onSubmit={handleFormSubmit}>
+    <Container className="login">
+    <Card>
+      <Card.Body>
+    <Card.Title className="d-flex flex-column py-2"><h1>Login</h1></Card.Title>
+    
+            <Form onSubmit={handleFormSubmit}>
+              <div className= "username">
               <input
                 className="form-input"
-                placeholder="username"
+                placeholder="Username"
                 name="username"
                 type="username"
                 id="username"
                 value={formState.username}
                 onChange={handleChange}
               />
+              </div>
+              <div className= "password">
               <input
                 className="form-input"
-                placeholder="******"
+                placeholder="Password"
                 name="password"
                 type="password"
                 id="password"
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className="btn d-block w-100" type="submit">
-                Submit
-              </button>
-            </form>
+              </div>
+            <div>
+            <Button className="btn" variant="dark" type="submit">
+              Submit
+            </Button>
+              </div>
+            </Form>
             {error && <div>Login failed</div>}
-          </div>
-        </div>
-      </div>
-    </main>
+        </Card.Body>
+    </Card>
+    </Container>
   );
 };
 
