@@ -39,7 +39,7 @@ const resolvers = {
       return Comment.find(params).sort({ createdAt: -1 });
     },
     comment: async (parent, { _id }) => {
-      return Comment.findOne({ _id })
+      return Comment.findOne({ _id }).populate('userId');
     },
     songs: async () => {
       return Song.find()
@@ -78,19 +78,45 @@ const resolvers = {
     },
     //addComment
     // need to work on this and make sure that comments are pushed to Songs
+    // addComment: async (parent, args, context) => {
+    //   if (context.user) {
+    //     const comment = await Comment.create({ ...args, username: context.user.username });
+
+    //     await User.findByIdAndUpdate(
+    //       { _id: context.user._id },
+    //       { $push: { comments: comment._id } },
+    //       { new: true }
+    //     );
+
+    //     return comment;
+    //   }
+    // },
     addComment: async (parent, args, context) => {
       if (context.user) {
-        const comment = await Comment.create({ ...args, username: context.user.username });
-
+        const { songId, commentText } = args;
+        const comment = await Comment.create({ 
+          songId, 
+          commentText, 
+          username: context.user.username,
+          userId: context.user._id });
+    
         await User.findByIdAndUpdate(
           { _id: context.user._id },
           { $push: { comments: comment._id } },
           { new: true }
         );
-
+    
+        await Song.findByIdAndUpdate(
+          { _id: songId },
+          { $push: { comments: comment._id } },
+          { new: true }
+        );
+    
         return comment;
+      } else {
+        throw new AuthenticationError('You need to be logged in to add a comment.');
       }
-    },
+    },    
     // intended to add the DailySong to the playlist database
     addSongToPlaylist: async (parent, { songId }, context) => {
       if (context.user) {

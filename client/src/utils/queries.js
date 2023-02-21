@@ -22,7 +22,7 @@ export const QUERY_USER = gql`
 export const QUERY_SONG = gql`
     query song($id: String!){
         song(_id: $id){
-        ID
+        _id
         songDay
         songTitle
         artistName
@@ -56,15 +56,17 @@ export const QUERY_SONGS =gql`
         commentCount
         comments {
             _id
+            commentText
+            username
+            }
         }
-    }
 }
 `;
 
 export const QUERY_COMMENT =gql`
     query comment($id: String!){
         song(_id: $id){
-        ID
+        _id
         username
         commentText
         createdAt
@@ -76,12 +78,36 @@ export const QUERY_COMMENT =gql`
 export const QUERY_COMMENTS = gql`
     query comments($songId: String!){
         song(songId: $songId){
-        comments {
-        ID
-        username
-        commentText
-        createdAt
-        songId
+            comments {
+                _id
+                username
+                commentText
+                createdAt
+                user {
+                    username
+                }
+                songId {
+                    _id
+                    songTitle
+                    artistName
+                    songImage
+                    songUrl
+                    songDay
+                    comments {
+                        _id
+                        username
+                        commentText
+                        createdAt
+                        songId {
+                            _id
+                            songTitle
+                            artistName
+                            songImage
+                            songUrl
+                            songDay
+                    }
+                }
+            }
         }
     }
 }
