@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css';
 import React from 'react';
@@ -14,17 +13,21 @@ import { setContent, setContext } from '@apollo/client/link/context';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-
 import Home from './pages/Home'; 
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
-//import Forum from './pages/Forum';
 
 
 
 const httpLink = createHttpLink({
   uri: '/graphql',
+  onError: ({ operation, response, graphQLErrors, networkError }) => {
+    console.log('Request', operation);
+    console.log('Response', response);
+    console.log('GraphQL Errors', graphQLErrors);
+    console.log('Network Error', networkError);
+  },
 });
 
 const authLink = setContext((_, { headers }) => {
