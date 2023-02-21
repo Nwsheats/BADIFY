@@ -8,6 +8,9 @@ const commentSchema = new Schema(
             ref: 'User',
             required: true
         },
+        username: {
+            type: String
+        },
         commentText: {
             type: String,
             required: true

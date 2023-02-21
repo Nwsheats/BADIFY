@@ -36,7 +36,8 @@ const typeDefs = gql`
         username: String
         commentText: String
         createdAt: String
-        songId: Song #removed square brackets because a comment can only be related to a single song
+        songId: Song
+        user: User
     }
 
     type Auth {
@@ -52,14 +53,14 @@ const typeDefs = gql`
         comments(songId: String, username: String): [Comment]
         comment(_id: String): Comment
         songs: [Song]
-        song(_id: String): Song
+        song(songId: String): Song
     
     }
 
     type Mutation {
         login(username: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
-        addComment(commentText: String!, songId: String!, userId: String!): Comment
+        addComment(commentText: String!, songId: String!): Comment
         removeComment(CommentId: ID!): Comment
         addSongToPlaylist(songId: ID!): User
         removeSongFromPlaylist(songId: ID!): User

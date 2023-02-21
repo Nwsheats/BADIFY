@@ -25,8 +25,8 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_COMMENT = gql`
-mutation AddComment($commentText: String!, $songId: String!, $userId: String!) {
-  addComment(commentText: $commentText, songId: $songId, userId: $userId) {
+mutation AddComment($commentText: String!, $songId: String!) {
+  addComment(commentText: $commentText, songId: $songId) {
     _id
     commentText
     songId {

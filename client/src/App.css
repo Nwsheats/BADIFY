@@ -87,3 +87,18 @@ margin-top: 50px
   margin-bottom: 5px;
   margin-top: 2px
 }
+
+.song-details-container {
+  display: flex;
+  justify-content: space-between;
+  height: calc(100vh - 220px);
+  overflow: auto;
+}
+
+.jumbotron {
+  width: 66%
+}
+
+.ui-segment {
+  width: 33%
+}

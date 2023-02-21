@@ -1,4 +1,5 @@
 import decode from 'jwt-decode';
+// import { useContext } from 'react';
 
 
 
@@ -11,6 +12,12 @@ class AuthService {
     // Checks if there is a saved token and it's still valid
     const token = this.getToken();
     return !!token && !this.isTokenExpired(token); // handwaiving here
+  }
+
+  isAuth() {
+    // Checks if the user is logged in by calling loggedIn()
+    console.log('isAuth function called')
+    return this.loggedIn();
   }
 
   isTokenExpired(token) {
@@ -42,8 +49,10 @@ class AuthService {
     localStorage.removeItem('id_token');
     // this will reload the page and reset the state of the application
     window.location.assign('/');
+
   }
 }
 
-
 export default new AuthService();
+
+
