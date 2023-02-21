@@ -36,7 +36,7 @@ const typeDefs = gql`
         username: String
         commentText: String
         createdAt: String
-        songId: [Song]
+        songId: Song #removed square brackets because a comment can only be related to a single song
     }
 
     type Auth {
