@@ -54,6 +54,7 @@ const typeDefs = gql`
         comment(_id: String): Comment
         songs: [Song]
         song(songId: String): Song
+        commentsByUser: [Comment]
     
     }
 

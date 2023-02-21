@@ -5,6 +5,7 @@ import { QUERY_ME } from "../../utils/queries";
 
 const PopulatePlaylist = () => {
     const [ listState, setListState ] = useState([]);
+    const [ commentState, setCommentState ] = useState([]);
 
     const { loading, error, data: userData } = useQuery(QUERY_ME);
         console.log(userData)
@@ -16,6 +17,15 @@ const PopulatePlaylist = () => {
             const userPlaylist = userData.me.playlist;
             console.log(userPlaylist)
             setListState(userPlaylist)
+        }
+    }, [userData]);
+
+    useEffect(() => {
+        if (userData && userData.me && userData.me.comments) {
+            console.log(typeof userData.me)
+            const userComments = userData.me.comments;
+            console.log(userComments)
+            setCommentState(userComments)
         }
     }, [userData]);
 

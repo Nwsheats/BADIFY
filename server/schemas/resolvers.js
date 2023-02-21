@@ -52,6 +52,16 @@ const resolvers = {
       // .populate('songUrl')
       // .populate('songImage');
     },
+    commentsByUser: async (parent, { _id }, context) => {
+      if (context.user) {
+
+      const userComments = await Comment.find({
+         userId: context.user._id
+      }).populate('user');
+      
+      return userComments;
+
+      }}
   },
   Mutation: {
     login: async (parent, { username, password }) => {
