@@ -3,11 +3,12 @@ import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import 'semantic-ui-css/semantic.min.css';
 import 'semantic-ui-react'; 
-import { Button , Card , Form } from "react-bootstrap";
+import { Button , Card , Container , Form } from "react-bootstrap";
+
 
 
 import Auth from "../utils/auth";
-import { Container } from "semantic-ui-react";
+
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ username: "", password: "" });
