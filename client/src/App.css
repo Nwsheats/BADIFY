@@ -69,3 +69,21 @@
 .navbar {
   padding:0
 }
+
+.login {
+  margin-top: 50px
+}
+
+.signup {
+margin-top: 50px
+}
+
+.form-input {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  margin-bottom: 5px;
+  margin-top: 2px
+}
