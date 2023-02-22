@@ -47,16 +47,54 @@
   color: white;
 }
 
+.all-playlist {
+  display: grid;
+  grid-template-columns: auto;
+}
 .single-playlist {
   border: 1px solid black;
   margin: 15px;
-  padding: 10px;
+  padding: 25px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.playlist-btn {
+  background-color: rgb(43, 175, 175);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 16px 40px;
+  font-size: 18px;
+}
+
+.playlist-image {
+  height: 170px;
+}
+
+.playlist-text {
+  text-align: left;
+  margin-left: 20px;
+}
+.playlist-img-container {
+  display: flex;
+  align-items: center;
+}
+
+.playlist-text h3 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.playlist-text p {
+  font-size: 16px;
+  font-weight: lighter;
 }
 
 .single-comment {
   border: 1px solid black;
   margin: 15px;
-  padding: 10px;
+  padding: 25px 10px;
 }
 
 .logo {
@@ -90,7 +128,6 @@
   margin-bottom: 5px;
   margin-top: 2px;
   background-color: rgb(43, 175, 175);
- 
 }
 
 .jumbotron {
@@ -102,6 +139,13 @@
 }
 
 .column {
-margin-top: 50px
+  margin-top: 50px;
 }
 
+.playlist-heading {
+  font-size: 40px;
+}
+
+.comment-heading {
+  font-size: 40px;
+}
