@@ -119,7 +119,7 @@ const DailySong = ({ songId }) => {
     {/* Where the song information from songState and songImage are returned */}
         <div>
             <div>
-            <a href={songState.songUrl} 
+            <a href={songState.songUrl} target="_blank" rel="noreferrer"
             className="square border border-dark" 
             style={{ display: "inline-block", width: "200px", height: "200px", border: "" }}>
             <img style={{backgroundImage: `url(${songImage})`}} 
