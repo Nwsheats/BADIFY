@@ -75,7 +75,7 @@ const Login = (props) => {
               />
               </div>
             <div>
-            <Button className="btn" variant="dark" type="submit">
+            <Button className="btn" variant="info" type="submit">
               Submit
             </Button>
               </div>
