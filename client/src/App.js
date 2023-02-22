@@ -53,6 +53,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Header></Header>
+        
         <Routes>
         {/* <Route path='/Home' element={<Home/>} /> */}
           {/*<Route path='/Forum' element={<Forum/>} />*/}
@@ -61,6 +62,7 @@ function App() {
           <Route path='/' element={<Home/>} />
           <Route path='/Profile' element={<Profile/>} />
         </Routes>
+        
         <Footer></Footer>
       </Router>
       </ApolloProvider>

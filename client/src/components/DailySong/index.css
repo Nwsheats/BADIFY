@@ -1,29 +1,20 @@
-.yellow {
-    color:#fff614;
-}
-.green {
-    color: #34a93f;
-}
-.blue {
-    color: #23b6fa;
-}
-.pink {
-    color: #ea038e
-}
+
 .ui-segment{
     display: flex;
     flex-direction: column;
     overflow: auto;
     width: 100%;
-    margin-left: 5px;
+    border: 1px solid black;
+    margin: 15px;
+    padding: 10px;
 }
-.song-details-container {
+.song-of-day-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     overflow: auto;
     margin-right: 5px;
-    height: 80%;
+    height: 100%;
     width: 100%;
 }
 .song-band-container{
@@ -31,6 +22,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    border: 1px solid black;
+    margin: 15px;
+    padding: 10px;
     width: 100%;
 }
 .middel-container{
@@ -53,13 +47,5 @@
 .btn{
     text-decoration-style: wavy;
     display: flex;
-}
-.ui-segment{
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-}
-.h3{
-    margin-top: 30px;
 }
 
