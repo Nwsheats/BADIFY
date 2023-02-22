@@ -113,16 +113,6 @@ export const QUERY_COMMENTS = gql`
 }
 `;
 
-// export const QUERY_PLAYLIST = gql`
-//     query playlist($id: String!){
-//         song(_id: $id){
-//         username
-//         listName
-//         createdAt
-//         songs
-//         }
-//     }
-// `;
 
 export const QUERY_ME = gql`
     {
