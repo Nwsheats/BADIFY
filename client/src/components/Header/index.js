@@ -25,6 +25,7 @@ function Header() {
       return (
       <Nav className="me-auto">
       <div className="header-menu">
+      <Link to="/">Home</Link>
         <Link to="/Login">Login</Link>
         <Link to="/Signup">Signup</Link>
       </div>
@@ -35,8 +36,8 @@ function Header() {
 
   return (
     <>
-    <Navbar className="d-flex justify-content-between" bg="dark" variant="dark">
-      <Navbar.Brand href="#home"><img className="logo" src="./Logo.png" alt="" /></Navbar.Brand>
+    <Navbar className="d-flex justify-content-between" bg="dark" variant="dark" expand="lg">
+      <Navbar.Brand href="/"><img className="logo" src="./Logo.png" alt="Badify logo" /></Navbar.Brand>
       <Nav>{showLogin()}</Nav>
       <Navbar fixed="top" />
     </Navbar>
