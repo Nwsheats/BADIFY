@@ -93,13 +93,6 @@
  
 }
 
-.song-details-container {
-  display: flex;
-  justify-content: space-between;
-  height: calc(100vh - 220px);
-  overflow: auto;
-}
-
 .jumbotron {
   width: 66%;
 }
