@@ -4,7 +4,7 @@ import AuthService from "../utils/auth";
 
 
 
-export default function Home({ code }) {
+export default function Home() {
   return (
     <Container className="d-flex flex-column py-2" style={{ height: "100vh" }}>
    {/* <Banner/> */}
