@@ -1,4 +1,5 @@
 {
+  "homepage": "https://badify.herokuapp.com/",
   "name": "third-project",
   "version": "1.0.0",
   "description": "",
@@ -36,6 +37,5 @@
   },
   "bugs": {
     "url": "https://github.com/Nwsheats/Third-Project/issues"
-  },
-  "homepage": "https://github.com/Nwsheats/Third-Project#readme"
+  }
 }
