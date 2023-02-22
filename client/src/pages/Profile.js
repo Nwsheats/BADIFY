@@ -29,7 +29,7 @@ const Profile = () => {
       <PopulatePlaylist />
         <div className="column">
           <div className="ui segment">
-            <h1>Comments</h1>
+            <h1 className='comment-heading'>Comments</h1>
             <div>
               <div className="single-comment">
                 <h3>Username</h3>
