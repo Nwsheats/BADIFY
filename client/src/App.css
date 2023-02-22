@@ -39,43 +39,46 @@
 
 .header-menu a {
   text-decoration: none;
-  color: white; 
+  color: white;
   margin: 0 20px;
   font-size: 18px;
-
 }
 .header-menu a:hover {
-  color:white
+  color: white;
 }
 
 .single-playlist {
   border: 1px solid black;
-  margin: 15px; 
+  margin: 15px;
   padding: 10px;
-
 }
 
 .single-comment {
   border: 1px solid black;
-  margin: 15px; 
+  margin: 15px;
   padding: 10px;
-  
 }
 
-.logo{
+.logo {
   height: 150px;
 }
 
 .navbar {
-  padding:0
+  padding: 0;
 }
 
 .login {
-  margin-top: 50px
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  height: 250px;
 }
 
 .signup {
-margin-top: 50px
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  height: 300px;
 }
 
 .form-input {
@@ -85,13 +88,20 @@ margin-top: 50px
 
 .btn {
   margin-bottom: 5px;
-  margin-top: 2px
+  margin-top: 2px;
+  background-color: rgb(43, 175, 175);
+ 
 }
 
 .jumbotron {
-  width: 66%
+  width: 66%;
 }
 
 .ui-segment {
-  width: 33%
+  width: 33%;
 }
+
+.column {
+margin-top: 50px
+}
+

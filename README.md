@@ -113,11 +113,11 @@ This application is utilizing the following License: MIT
 
 ## Deployed URL Link
 
-https://go-aware.herokuapp.com/
+[Badify](https://badify.herokuapp.com/)
 
 ## GitHub Repository Link
 
-https://github.com/Nwsheats/BADIFY
+[Nwsheats/BADIFY](https://github.com/Nwsheats/BADIFY)
 
 ## Credits
 ```
