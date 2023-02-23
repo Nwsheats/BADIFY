@@ -4,9 +4,12 @@
     flex-direction: column;
     overflow: auto;
     width: 100%;
-    border: 1px solid black;
-    margin: 15px;
-    padding: 10px;
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgb(34 36 38 / 15%);
+    margin: 14px;
+    padding: 14px;
+    border-radius: 0.28571429rem;
+    border: 1px solid rgba(34,36,38,.15);
 }
 .song-of-day-container {
     display: flex;
@@ -22,9 +25,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    border: 1px solid black;
-    margin: 15px;
-    padding: 10px;
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgb(34 36 38 / 15%);
+    margin: 14px;
+    padding: 14px;
+    border-radius: 0.28571429rem;
+    border: 1px solid rgba(34,36,38,.15);
     width: 100%;
 }
 .middel-container{
@@ -33,6 +39,7 @@
     width: 100%;
 }
 .songImageContainer{
+    
     width: 100%
 }
 .song-info{
@@ -45,7 +52,11 @@
 
 }
 .btn{
-    text-decoration-style: wavy;
+    /* text-decoration-style: wavy; */
     display: flex;
+}
+.click:hover {
+    transform: scale(1.2);
+    transition-duration: 0.5s;
 }
 

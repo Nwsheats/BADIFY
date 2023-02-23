@@ -80,7 +80,7 @@ const DailySong = ({ songId }) => {
     console.log(songState.comments)
     // the function that handles the comment submission button and fields
     const handleCommentSubmit = async (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         // a try statement to use addComment (ADD_COMMENT mutation) and pass along the songId variables and the commentText variables.
         try {
             await addComment({
@@ -114,7 +114,7 @@ const DailySong = ({ songId }) => {
                             <a href={songState.songUrl}
                                 className="square border border-dark"
                                 style={{ display: "inline-block", width: "200px", height: "200px", border: "" }}>
-                                <img style={{ backgroundImage: `url(${songImage})` }}
+                                <img className="click" style={{ backgroundImage: `url(${songImage})` }}
                                     src={process.env.PUBLIC_URL + "/" + songImage}
                                     alt=''>
                                 </img>
@@ -122,7 +122,7 @@ const DailySong = ({ songId }) => {
                         </div>
                     </div>
                 {/* using isAuth from above to limit the ability to see the Add to Playlist button */}
-                <div className="btn">{
+                <div >{
                     isAuth ? (
                         <div >
                             <Button onClick={handleAddSongToPlaylist} disabled={addSongClick}>
