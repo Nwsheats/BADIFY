@@ -1,6 +1,7 @@
 import React from 'react'
 import PopulatePlaylist from '../components/MyPlaylist'
 import AuthService from '../utils/auth';
+import PopulateComments from '../components/MyComments'
 
 
 const Profile = () => {
@@ -26,8 +27,9 @@ const Profile = () => {
   return (
     <div className="ui center aligned grid">
       <div className="center aligned two column row">
-      <PopulatePlaylist />
-        <div className="column">
+        <PopulatePlaylist />
+        <PopulateComments />
+        {/* <div className="column">
           <div className="ui segment">
             <h1 className='comment-heading'>Comments</h1>
             <div>
@@ -41,13 +43,13 @@ const Profile = () => {
               </div>
               <div className="single-comment">
                 <h3>Username</h3>
-                <p>Comment</p>
-              </div>
-            </div>
-          </div>
-        </div>
+                <p>Comment</p> */}
       </div>
     </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
   );
 }
 
