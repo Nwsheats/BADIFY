@@ -104,51 +104,52 @@ const DailySong = ({ songId }) => {
         <div className="song-of-day-container">
             <div className="song-band-container ">
                 <h1>The Bad Song of the Day is:</h1>
-                    <div className="middel-container">
-                        <div className="song-info">
-                            <h2><q>{songState.songTitle}</q></h2>
-                            <h2>{songState.artistName}</h2>
-                        </div>
-                        {/* Where the song information from songState and songImage are returned */}
-                        <div className="songImageContainer">
-                            <a href={songState.songUrl}
-                                className="square border border-dark"
-                                style={{ display: "inline-block", width: "200px", height: "200px", border: "" }}>
-                                <img className="click" style={{ backgroundImage: `url(${songImage})` }}
-                                    src={process.env.PUBLIC_URL + "/" + songImage}
-                                    alt=''>
-                                </img>
-                            </a>
-                        </div>
+                <div className="middel-container">
+                    <div className="song-info">
+                        <h2><q>{songState.songTitle}</q></h2>
+                        <h2>{songState.artistName}</h2>
+                        <h3>Song submitted by: {songState.submittedBy}</h3>
                     </div>
+                    {/* Where the song information from songState and songImage are returned */}
+                    <div className="songImageContainer">
+                        <a href={songState.songUrl}
+                            className="square border border-dark"
+                            style={{ display: "inline-block", width: "200px", height: "200px", border: "" }}>
+                            <img className="click" style={{ backgroundImage: `url(${songImage})` }}
+                                src={process.env.PUBLIC_URL + "/" + songImage}
+                                alt=''>
+                            </img>
+                        </a>
+                    </div>
+                </div>
                 {/* using isAuth from above to limit the ability to see the Add to Playlist button */}
                 <div >{
                     isAuth ? (
                         <div >
                             <Button onClick={handleAddSongToPlaylist} disabled={addSongClick}>
-                            Add To Playlist
+                                Add To Playlist
                             </Button>
                         </div>
                     ) : (
                         <h2>
                             <p>Please log in to add this song to your playlist.</p>
                         </h2>
-                        )
-                    }
+                    )
+                }
                 </div>
             </div>
             <div className="ui-segment">
                 <h1>Comments</h1>
-                    <div className="comments-list">
-                        {songState.comments && songState.comments.map(comment => {
-                            return (
-                                <div key={comment._id} className="single-comment">
-                                    <p>{comment.username ? comment.username : 'Unknown User'}</p>
-                                    <h3>{comment.commentText}</h3>
-                                </div>
-                            )
-                        })}
-                    </div>
+                <div className="comments-list">
+                    {songState.comments && songState.comments.map(comment => {
+                        return (
+                            <div key={comment._id} className="single-comment">
+                                <p>{comment.username ? comment.username : 'Unknown User'}</p>
+                                <h3>{comment.commentText}</h3>
+                            </div>
+                        )
+                    })}
+                </div>
                 {isAuth && (
                     <form onSubmit={handleCommentSubmit}>
                         <div className="form-group">
