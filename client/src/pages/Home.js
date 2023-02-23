@@ -6,12 +6,8 @@ import AuthService from "../utils/auth";
 
 export default function Home() {
   return (
-    <Container className="d-flex flex-column py-2" style={{ height: "100vh" }}>
-   {/* <Banner/> */}
-      <div className="flex-grow-1 my-2" style={{ overflowY: "auto" }}>
-      <DailySong />
-      </div>
-      
-    </Container>
+    <div className="home" style={{ height: "80vh" }}>
+    <DailySong />
+    </div>
   );
 }
