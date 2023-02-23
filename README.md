@@ -120,10 +120,14 @@ This application is utilizing the following License: MIT
 [Nwsheats/BADIFY](https://github.com/Nwsheats/BADIFY)
 
 ## Credits
-```
-Nathan Sheats
-Melisa Zahirovic
-Ben Wolf
-Moony Xiong
-Conor Donnelly
-```
+
+[Nathan Sheats](https://github.com/Nwsheats)
+
+[Melisa Zahirovic](https://github.com/zahirovic)
+
+[Ben Wolf](https://github.com/wolfjfly)
+
+[Moony Xiong](https://github.com/mxiong22)
+
+👽 [Conor Donnelly](https://github.com/riversidempls) 👽
+
